@@ -1,0 +1,13 @@
+CryPic
+
+CryPic (pronounced “cryptic” without the “t”) is a web application that combines cryptography with
+steganography. Users can write messages that will be encrypted using AES. The resulting ciphertext
+will be converted to an image file, which can then be saved and sent to the recipient. Recipients
+can upload the image they received in order to view the decrypted message.
+
+Users will have the option of providing their own key or having the application generate a key for
+them. The key will be encrypted using a static system key, and the ciphertext of the encrypted key
+will be converted to pixels to be included in the image. This is done to eliminate the need for the
+key to be transported as plaintext to the recipient.
+
+(copied from Piazza post)
