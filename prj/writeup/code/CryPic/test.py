@@ -1,35 +1,18 @@
 from CryPic import CryPic
-from PIL import Image
-import time
 
-mykey = "dude"
-gen = CryPic(mykey)
-mymsg = "this is a message"
+key = "blank message"
+message = ""
+
+crypic = CryPic(key)
 
 # Create image
-gen.generate_pic(mymsg)
+crypic.generate_pic(message)
 
 # Decrypt image
-gen2 = CryPic(mykey)
-# image = Image.open("uploads/new1.png")
-pt = gen2.decrypt_pic('static/images/new1.png')
+crypic = CryPic(key)
 
-# print(ct)
-print(pt)
+pt = crypic.decrypt_pic('static/images/new1.png')
 
-# # Encrypt
-# ct = gen.generate_pic(mymsg)
-#
-# # Create pixels
-# ctArr = gen.generate_pixels(ct)
-#
-# # Extract ciphertext
-# ctBy = gen.extract_ciphertext(ctArr)
-#
-# # Decrypt
-# pt = gen.decrypt_pic(ctBy)
-#
-# print(ct)
-# print(len(ctArr))
-# print(len(ctBy))
-# print(pt)
+print("Message:                  " + message)
+print("Key:                      " + key)
+print("Message after decryption: " + pt)

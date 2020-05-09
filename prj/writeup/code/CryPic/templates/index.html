@@ -38,11 +38,6 @@
       <div class="card-body">
         <form action="/generate" method="POST">
           <div class="form-group">
-            {% with errors = get_flashed_messages(category_filter=['error']) %}
-              {% if errors %}
-                <p style="color:red">{{ errors[0] }}</p>
-              {% endif %}
-            {% endwith %}
             <label for="inputMessage">Message</label>
             <input type="text" name="message" id="inputMessage"
                    class="form-control" placeholder="Type your message here"
@@ -52,33 +47,22 @@
           <div class="form-group">
             <label for="inputKey">Key (optional)</label>
             <input type="text" name="key" id="inputKey" class="form-control"
-                   placeholder="Using randomly generated key"
-                   required="required">
+                   placeholder="Using randomly generated key">
+            <small class="form-text text-muted">
+              It is recommended to use a key that is 16 characters long
+            </small>
           </div>
 
           <center>
             <button class="btn btn-primary" type="submit">Generate</button>
           </center>
         </form>
-
-        <form action="/decrypt" method="POST" enctype="multipart/form-data">
-          <div class="form-group">
-            {% with errors = get_flashed_messages(category_filter=['error']) %}
-              {% if errors %}
-                <p style="color:red">{{ errors[0] }}</p>
-              {% endif %}
-            {% endwith %}
-            <label for="key">Key</label>
-            <input type="text" name="key" id="key" class="form-control"
-                   required="required">
-            <label for="image">Message</label>
-            <input type="file" name="image" id="image" accept="image/png"
-                   class="form-control-file" required="required">
-          </div>
-          <center>
-            <button class="btn btn-primary" type="submit">Decrypt</button>
-          </center>
-        </form>
+        <br>
+        <center>
+          <p>
+            Click <a href="/decrypt">here</a> to decrypt a CryPic image
+          </p>
+        </center>
       </div>
     </div>
   </div>

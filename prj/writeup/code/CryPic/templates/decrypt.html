@@ -11,37 +11,52 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename ='bootstrap.min.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename ='vendors/startbootstrap-sb-admin-gh-pages/css/sb-admin.min.css' )}}"/>
+  <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static',filename ='bootstrap.min.css') }}"/>
+  <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static',filename ='vendors/startbootstrap-sb-admin-gh-pages/css/sb-admin.min.css' )}}"/>
 </head>
-
 <body>
   <!--All JS scripts for this page-->
-  <script type="text/javascript" src="{{ url_for( 'static',filename = 'jquery-3.3.1.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for( 'static',filename = 'bootstrap.bundle.min.js') }}"></script>
+  <script type="text/javascript"
+          src="{{ url_for( 'static',filename = 'jquery-3.3.1.min.js') }}">
+  </script>
+  <script type="text/javascript"
+          src="{{ url_for( 'static',filename = 'bootstrap.bundle.min.js') }}">
+  </script>
 
   <div class="container">
     <div class="jumbotron jumbotron-fluid">
       <center>
         <h1 class="display-4">CryPic</h1>
-        <p class="lead">
-          Encrypt your message and send it to your friend as a picture!
-        </p>
+        <p class="lead">Encrypt your message and send it to your friend as a
+          picture!</p>
       </center>
     </div>
 
-    <div class="card mx-auto mt-5 w-50" style="width: 40rem;">
-      <div class="card-header">Decrypted Message</div>
+    <div class="card mx-auto mt-5 w-50">
+      <div class="card-header">Image Decrypter</div>
       <div class="card-body">
-        <center>
-          <p>{{ message }}</p>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="key">Key</label>
+            <input type="text" name="key" id="key" class="form-control"
+                   required="required">
+            <br>
+            <label for="image">Image</label>
+            <input type="file" name="image" id="image" accept="image/png"
+                   class="form-control-file" required="required">
+          </div>
+          <center>
+            <button class="btn btn-primary" type="submit">Decrypt</button>
+          </center>
           <br>
-          <a href="/home">
-            <button class="btn btn-secondary" type="submit">
-              Back to homepage
-            </button>
-          </a>
+          <center>
+          <p>
+            <a href="/home">Home</a>
+          </p>
         </center>
+        </form>
       </div>
     </div>
   </div>
