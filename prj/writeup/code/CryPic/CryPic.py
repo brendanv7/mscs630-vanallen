@@ -19,7 +19,7 @@ class CryPic:
 
         # Use PIL to create an image from the array of pixels
         new_image = Image.fromarray(array)
-        new_image.save('static/images/new1.png')
+        new_image.save('static/images/crypic.png')
 
         # Return value is for testing purposes only
         return ciphertext

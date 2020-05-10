@@ -1,5 +1,4 @@
-#!/Users/brendan/Desktop/SecurityAlgorithms/mscs630-vanallen/prj/writeup/code/CryPic/venv/bin/python3
-
+#!/Users/brendan/Desktop/SecurityAlgorithms/mscs630-vanallen/prj/writeup/code/CryPic/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
